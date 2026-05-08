@@ -24,14 +24,6 @@ class SpeedSlider extends StatelessWidget
           value: speed, 
           onChanged: onChanged
         ),
-        const SizedBox(height: 20),
-        ElevatedButton(
-          onPressed: ()
-          {
-            print("Connecting...");  
-          }, 
-          child: const Text("Connet"),
-        ),
       ],
     );
   }

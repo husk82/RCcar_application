@@ -16,15 +16,16 @@ class ControlButton extends StatelessWidget
   @override
   Widget build(BuildContext context) 
   {
-     return GestureDetector(
-      onTapDown: (_) => sendCommand(command),
-      onTapUp: (_) => sendCommand("STOP"),
-      onTapCancel: () => sendCommand("STOP"),
-      child: ElevatedButton(
-        onPressed: () {},
-        style:  ElevatedButton.styleFrom(
-          padding: const EdgeInsets.all(20),
-        ), 
+     return Listener(
+      onPointerDown: (_) => sendCommand(command),
+      onPointerUp: (_) => sendCommand("STOP"),
+      onPointerCancel: (_) => sendCommand("STOP"),
+      child: Container(
+        padding: const EdgeInsets.all(20),
+        decoration: BoxDecoration(
+          color: Colors.blueGrey,
+          borderRadius: BorderRadius.circular(12),
+        ),
         child: Icon(icon, size: 30),
       ),
     );
